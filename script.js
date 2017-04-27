@@ -6,7 +6,7 @@ $(function() {
 			str += chars[Math.floor(Math.random() * chars.length)]; 
 		} 
 		return str; 
-	};
+	}
 
 	function Column(name) { 
 		var self = this; // przyda się dla funkcji zagnieżdżonych 
@@ -25,8 +25,8 @@ $(function() {
 
 			// PODPINANIE ODPOWIEDNICH ZDARZEŃ
 			$columnDelete.click(function() { 
-				self.removeColumn(); 
-			}); 
+				self.removeColumn();
+			});
 			//Dodawanie karteczki po kliknięciu w przycisk: 
 			$columnAddCard.click(function() { 
 				self.addCard(new Card(prompt("Wpisz nazwę karty"))); 
@@ -47,16 +47,16 @@ $(function() {
 					var column = new Column(name); 
 					board.addColumn(column); 
 			});
-		};
+		}
+	}
 
-		Column.prototype = { 
-			addCard: function(card) {
-				this.$element.children('ul').append(card.$element); 
-			}, 
-			removeColumn: function() { 
-				this.$element.remove(); 
-			} 
-		};
+	Column.prototype = { 
+		addCard: function(card) {
+			this.$element.children('ul').append(card.$element); 
+		}, 
+		removeColumn: function() { 
+			this.$element.remove(); 
+		} 
 	};
 
 	function Card(description) { 
@@ -81,13 +81,13 @@ $(function() {
 					.append($cardDescription);
 
 			return $card;
-		};
+		}
+	}
 
-		Card.prototype = { 
-			removeCard: function() { 
-				this.$element.remove(); 
-			}
-		};
+	Card.prototype = { 
+		removeCard: function() { 
+			this.$element.remove(); 
+		}
 	};
 
 	var board = { 
@@ -104,7 +104,7 @@ $(function() {
 			connectWith: '.column-card-list', 
 			placeholder: 'card-placeholder' 
 		}).disableSelection(); 
-	};
+	}
 
 	// TWORZENIE KOLUMN 
 	var todoColumn = new Column('Do zrobienia'); 
