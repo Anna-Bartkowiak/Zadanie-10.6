@@ -40,15 +40,15 @@ $(function() {
 
 			// ZWRACANIE STWORZONEJ KOLUMNY
 			return $column;
-
-			$('.create-column') 
-				.click(function(){ 
-					var name = prompt('Wpisz nazwę kolumny'); 
-					var column = new Column(name); 
-					board.addColumn(column); 
-			});
 		}
 	}
+
+	$('.create-column') 
+		.click(function(){ 
+			var name = prompt('Wpisz nazwę kolumny'); 
+			var column = new Column(name); 
+			board.addColumn(column); 
+	});
 
 	Column.prototype = { 
 		addCard: function(card) {
